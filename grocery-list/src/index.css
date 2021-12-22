@@ -1,0 +1,296 @@
+/*
+Variables
+*/
+:root {
+  --bodyBackground: linear-gradient(
+    135deg,
+    rgb(13, 5, 32) 0%,
+    rgb(13, 5, 32) 100%
+  );
+  --containerBackground: linear-gradient(
+    135deg,
+    rgba(225, 217, 243, 0.8) 0%,
+    rgb(215, 202, 247) 100%
+  );
+  --borderColor: rgb(226, 207, 252);
+  --listColor: rgb(226, 226, 226);
+  --darkRed: rgb(155, 9, 9);
+  --darkGreen: rgb(4, 158, 4);
+  --textListColor: rgb(37, 37, 37);
+  --background-message-danger: linear-gradient(
+    to bottom,
+    rgba(240, 83, 65, 0.7) 0%,
+    rgba(226, 67, 67, 0.7) 100%
+  );
+  --background-message-success: linear-gradient(
+    to bottom,
+    rgba(65, 240, 74, 0.7) 0%,
+    rgba(67, 226, 75, 0.7) 100%
+  );
+  --backgroundAdd: linear-gradient(
+    to bottom,
+    rgba(253, 253, 253, 0.7) 0%,
+    rgba(236, 255, 237, 0.7) 100%
+  );
+
+  --submit-hoverbackground: linear-gradient(
+    to bottom,
+    rgba(65, 240, 74, 0.7) 0%,
+    rgba(67, 226, 75, 0.7) 100%
+  );
+  --submit-hoverText: rgb(224, 250, 224);
+  --submit-hoverText2: rgb(250, 224, 224);
+  --submit-cancelbtHoverBackground: linear-gradient(
+    to bottom,
+    rgba(245, 58, 37, 0.7) 0%,
+    rgba(204, 13, 13, 0.7) 100%
+  );
+  --boxShadows: 0px 7px 30px 0px rgba(50, 50, 50, 0.8);
+  --ListBorder: rgb(50, 39, 95);
+  --ShadowText: 0px 7px 10px rgba(0, 0, 0, 0.76);
+}
+
+/*
+General CSS
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  background: var(--bodyBackground);
+  background-size: cover;
+  max-width: 100%;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  text-shadow: var(--ShadowText);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.container {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 35rem;
+  margin-top: 9rem;
+  margin-bottom: 8rem;
+  padding: 2rem;
+  background: var(--containerBackground);
+  border-radius: 0.5rem;
+  border: 0.27rem solid var(--borderColor);
+}
+@media screen and (min-width: 995px) {
+  .container {
+    width: 95vw;
+  }
+}
+@media screen and (max-width: 550px) {
+  .container {
+    width: 83vw;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  h2 {
+    font-size: 2.3rem;
+  }
+}
+
+/*
+Alert CSS
+*/
+
+.message-container {
+  height: 2rem;
+  text-align: center;
+  border-radius: 0.2rem;
+}
+
+.message-type-danger {
+  background: var(--background-message-danger);
+  height: 1.8rem;
+  color: var(--darkRed);
+  font-size: 1.2rem;
+  animation-name: traslade;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.message-type-success {
+  background: var(--background-message-success);
+  height: 1.8rem;
+  color: var(--darkGreen);
+  font-size: 1.2rem;
+  animation-name: traslade;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes traslade {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+Form CSS
+*/
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.submit-btn,
+.submit2-btn,
+.cancel-btn {
+  font-size: 1rem;
+  padding: 0.3rem;
+  color: var(--darkGreen);
+  border: none;
+  background: var(--backgroundAdd);
+  height: 2.5rem;
+  margin: auto;
+  width: 15%;
+}
+
+.submit-btn {
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}
+
+.submit-btn:hover,
+.submit2-btn:hover {
+  box-shadow: var(--boxShadows);
+  background: var(--submit-hoverbackground);
+  color: var(--submit-hoverText);
+}
+
+.cancel-btn {
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  color: var(--darkRed);
+}
+
+.cancel-btn:hover {
+  box-shadow: var(--boxShadows);
+  color: var(--submit-hoverText2);
+  background: var(--submit-cancelbtHoverBackground);
+}
+
+.txt-entry {
+  height: 2.5rem;
+  border: none;
+  width: 85%;
+  margin: auto;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.control-form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 1.7rem auto 1.4rem auto;
+}
+
+/*
+List CSS
+*/
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.list-items {
+  background: var(--listColor);
+  display: flex;
+  height: 4rem;
+  margin: 1rem 0rem 1rem 0rem;
+  border-radius: 0.5rem;
+  justify-content: space-between;
+  border: 2px solid var(--ListBorder);
+}
+.list-items:hover {
+  box-shadow: var(--boxShadows);
+}
+
+.list-grocery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  text-align: left;
+  color: var(--textListColor);
+  height: fit-content;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.btn-container {
+  display: flex;
+}
+
+.trash-btn,
+.edit-btn {
+  margin: auto;
+  font-size: 1.7rem;
+  border: none;
+  margin: auto;
+  background: var(--listColor);
+}
+
+.trash-btn {
+  color: var(--darkRed);
+}
+.edit-btn {
+  color: var(--darkGreen);
+}
+
+.trash-btn:hover,
+.edit-btn:hover {
+  font-size: 1.9rem;
+}
+
+.clear-btn {
+  height: 2.5rem;
+  margin: auto;
+  margin-top: 2rem;
+  width: 50%;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  border-radius: 0.5rem;
+  border: none;
+  color: var(--darkRed);
+  background: var(--backgroundAdd);
+}
+
+.clear-btn:hover {
+  box-shadow: var(--boxShadows);
+  color: var(--submit-hoverText2);
+  background: var(--submit-cancelbtHoverBackground);
+}
